@@ -39,7 +39,7 @@ fetchzonedata()
 	if [ "${xflag}" -eq 0 ] || [ "$(id -u)" -eq 0 ]; then
 		output=$(droproot ftp -MVo - "${url}")
 	else
-		output=$(ftp -MVo - "${url}") || exit 1
+		output=$(ftp -Vo - "${url}") || exit 1
 	fi
 
 	if [ -z "${output}" ]; then
