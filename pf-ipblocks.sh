@@ -69,7 +69,6 @@ if [ "${xflag}" -eq 0 ] && [ "$(id -u)" -ne 0 ]; then
 fi
 
 fetchzonedata
-[ -n "${output}" ] || exit 0
 
 if [ "${xflag}" -eq 0 ]; then
 	outfile=/etc/pf-$1.zone
