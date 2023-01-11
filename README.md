@@ -13,18 +13,18 @@ cctld
 # DESCRIPTION
 
 **pf-ipblocks**
-is a utility that will download the IP address blocks in CIDR format for the
+is a utility that downloads the IP address blocks in CIDR format for the
 country code top-level domain passed as
 *cctld*.
 
-When run without any options the output will then be saved to the following
-location if either the file does not already exist or has changed,
+When run without any options the output is saved to the following location
+if either the file does not already exist or has changed,
 */etc/pf-xx.zone*.
 A
 pf(4)
 table called
 *xx.zone*
-will then be either created or updated.
+is then either created or updated.
 In both instances,
 *xx*
 is the
