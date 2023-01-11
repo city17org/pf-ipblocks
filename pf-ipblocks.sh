@@ -34,7 +34,7 @@ droproot()
 	eval su -s /bin/sh "${_user}" -c "'$*'" || exit 1
 }
 
-fetchzonedata()
+fetchdata()
 {
 	if [ "${xflag}" -eq 0 ] || [ "$(id -u)" -eq 0 ]; then
 		output=$(droproot ftp -MVo - "${url}")
@@ -43,7 +43,7 @@ fetchzonedata()
 	fi
 
 	if [ -z "${output}" ]; then
-		die "${0##*/}: failed to fetch zone file data"
+		die "${0##*/}: failed to download data"
 	fi
 }
 
@@ -68,7 +68,7 @@ if [ "${xflag}" -eq 0 ] && [ "$(id -u)" -ne 0 ]; then
 	die "${0##*/}: needs root privileges"
 fi
 
-fetchzonedata
+fetchdata
 
 if [ "${xflag}" -eq 0 ]; then
 	outfile=/etc/pf-$1.zone
